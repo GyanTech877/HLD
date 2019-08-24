@@ -1,0 +1,76 @@
+Questions
+
+1) End Users
+2) Use Cases/ API
+3) Load(No of requests, No Of Users)
+4) Type Of System(Consistent, Partition Tolerant, Availability)
+5) Read Write Request Ratios
+
+---------------------------------------------------------
+
+Estimations/Assumptions
+
+1)No Of Request/s , /day /month /year(Read, Write)
+2)Size Of Request Per Use Case(Bandwidth For System/s)
+3)Storage Estimates ---(Standard Images Examples)
+4)In-Memory Estimates/ Type Of Data
+5)Storage In Db
+6)Latency Expected/ Read Write Strategy for Application Layer/ (Long Polling, Pull Mechanism, Push Mechanism, Web Socket For Client)
+7)Replica Required/Copies
+
+----------------------------------------------------------
+
+High Level Design
+0)Targetted Clients
+1)Api Design for each use case with parameter(Follow Richardson Maturity Model)
+2)Modules Required
+3)Database Schema
+4)Basic Happy FLow
+
+
+--------------------------------------------------------
+Low level Design
+
+1) Identify Proxy Requirement
+2) Service Registry/ Discovery Service(Failover strategy) 
+3) Each Modules Find Single Point Of Failures
+4) Identify Load Balancer Startegy Required
+5)Static Data Server Strategy(Push/Pull)
+6)Security & Authentication
+7)Asynchronous Request Handling
+    a)Asynchronous Types
+        Message Queue, Task Queue, Back Pressure
+
+8)Session Fixation
+9)Scaling Application Layer with microservices
+10)Communication Between Services
+11)Caching Startegy And Eviction Policy
+12)Handle Concurrency
+13)Deployment Strategy
+14)Continuous Integration/ Continuouse Delivery
+15)Data Recovery
+16)Archiving the Data
+
+
+----------------------------
+DBMS
+1)Selection Of DBMS(SQL/NOSQL/Hybrid)
+    a) RDBMS Type:MAster Slave. Master Master, Federation, Sharding, Denormalization, SQL-Tuning
+    b) NOSQL: Key Value, WIde Cloumn, Graph, Document
+        Lookups
+            RAM DB Type -->Redis, Memcache
+            Availability And Partition Tolerant: Cassandra, Riak , Voldemort, 
+            Consistent And Partition Tolerant: HBase, MongoDb, DynamoDb, CouchBase
+
+2)Persitence Startegy
+3)RAID Levels
+4)Data Criticality For Each Use Cases
+
+Justify/Conclusion
+1) Throughtput of each Layer
+2) Latency Caused Between Each Layer
+3) Open Quesions
+
+
+
+
